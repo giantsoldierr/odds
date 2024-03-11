@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odds Analyzer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Odds Analyzer</h1>
+        </header>
+        <main class="body">
+            <section class="main-section">
+                <div class="bloco">
+                    <label class="label-title" for="bankroll">Valor:</label>
+                    <input class="input" type="number" step="0.10" id="bankroll" placeholder="0.00" />
+                    <label class="label-title" for="odd">Odd:</label>
+                    <input class="input" type="number" step="0.10" id="odd" placeholder="1.00" />
+                </div>
+                <div class="bloco">
+                    <button id="calcular-kelly"
+                        onclick="calcularKelly(document.getElementById('odd').value,document.getElementById('bankroll').value)">
+                        Calcular
+                    </button>
+                </div>
+                <div class="bloco">
+                    <div class="bloco-result">
+                        <label class="label-title" for="Kelly" id="label">KELLY</label>
+                        <ul>
+                            <li class="labels">
+                                Bankroll (10%):
+                                <span class="results" id="bankrollResultado"></span>
+                            </li>
+                            <li class="labels">
+                                Prob. Win: <span class="results" id="probVitoriaValor"></span>
+                            </li>
+                            <li class="labels">
+                                Prob. Loss: <span class="results" id="probDerrotaValor"></span>
+                            </li>
+                            <li class="labels">
+                                Valor em %: <span class="results" id="kellyValor"></span>
+                            </li>
+                            <li class="labels">
+                                Valor da Aposta:
+                                <span class="results" id="valorApostaValor"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bloco-result">
+                        <label class="label-title">ROI</label>
+                        <ul>
+                            <li class="labels">Ganho: <span class="results" id="valor"></spanclass></li>
+                            <li class="labels">Lucro: <span class="results" id="lucroValor"></span></li>
+                            <li class="labels">ROI: <span class="results" id="roiPorcentagem"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </section>
+            <section class="kelly-section">
+                <p id="bankroll-result"></p>
+
+                <div class="kelly-results"></div>
+            </section>
+            <section class="roi-section"></section>
+        </main>
+        <footer class="footer">
+            <p>v<span id="version"></span></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
